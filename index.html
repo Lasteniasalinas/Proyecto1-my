@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon</title>
+
+    <link rel="shortcut icon" href="./assets/img/Logo_digimon.png" type="image/x-icon">
+
+    <!-- CSS BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- JS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!--iconos-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- ESTILOS PROPIOS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- SCRIPT PROPIO -->
+
+    <script  defer src="./assets/js/script2.js"></script>
+</head>
+
+<body>
+
+    <!-- Menu principal-->
+    <!--Barra de Navegacion Menu-->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./assets/img/Site-logo.webp" alt=""> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#listado">Listado de Digimón</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Buscar Digimón</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Encabezado-->
+    <header>
+        <div class="text-center mt-5 py-5">
+            <img id="logo" src="./assets/img/Logo_digimon.png" alt="">
+        </div>
+    </header>
+
+
+    <!--tabla con algunos digimon-->
+
+    <main class="container">
+        <!--Busqueda Digimon-->
+        <section id="buscaDigimon" class="py-5">
+            <h3 class="text-center py-5"> Busqueda de Digimon</h3>
+            <div class="row">
+                <div class="col-12 col-md-6 col-xl-4"></div>
+                <form id="buscarDigimon">
+                    <label for="nombreDigimon" class="form-label">Nombre: </label>
+                    <div class="input-group mb-3">
+                        <input type="text" name="nombreDigimon" id="nombreDigimon" class="form-control my-3" required>
+                            <button class="btn btn-outline-secondary my-3" type="button" id="buscar">
+                                <i class="bi bi-search"></i></button> 
+                     </div>
+
+                     <!--modal -->
+                     <div class="modal" tabindex="-1" id="detalleamplio">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header" id="tituloPokemon">
+                              <h5 class="modal-title">Modal title</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarModal()"></button>
+                            </div>
+                            <div class="modal-body" id="modalImagen">
+                                <img  src="" alt="">
+                            </div>
+                            <div class="modal-footer" id="detallePoke">
+                                <h4></h4>
+                              
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!--modal -->
+                </form>
+  
+            </div>
+            
+        </section>
+      
+
+        <!--Listado Digimon-->
+        <section id="listadoDigimon" class="py-5" >
+            <h2 class="text-center py-5">Listados de Digimon </h2>
+            <table class="table mt-5"  >
+                <thead>
+                    <tr class="text-center" >
+               
+                        <th scope="col" id="nombreDigi">Nombre</th>
+                        <th scope="col" id="nivelDigi">Imagen</th>
+                        <th scope="col" id="imagenDigi">Nivel</th>
+                        <th scope="col" id="Detalles" > Ver Detalles</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                   
+                </tbody>
+            </table>
+ 
+        </section>
+
+     
+    </main>
+
+
+    <!--Inicio pie-->
+    <footer>
+      <!--  <h2 class="text-center py-5">Desarrollado por Lastenia Salinas Hormazábal </h2>-->
+    </footer>
+
+
+
+</body>
+
+
+
+
+<style>
+    /* body {
+        background-color: blueviolet;
+    } */
+
+h2, h3, label, button{
+    color: antiquewhite;
+}
+ #modalImagen img{
+    alt: 350px;
+    width: 350px;
+    margin-left: 50px;
+ }
+
+   .container {
+        background-color: rgb(63, 4, 2);
+    }
+
+
+    #cuerpoTabla img{
+            alt: 50px;
+            width: 50px;
+    }
+
+    
+
+#tabla{
+        
+          text-align: center;
+          
+        
+}
+
+
+</style>
+
+</html>
